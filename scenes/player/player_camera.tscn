@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://do03vg5ef0w5e"]
+
+[ext_resource type="Script" path="res://levels/camera.gd" id="1_u8h8h"]
+
+[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("tile_map")]
+process_callback = 0
+script = ExtResource("1_u8h8h")
+tile_map = NodePath("")
