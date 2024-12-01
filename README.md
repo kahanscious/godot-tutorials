@@ -10,6 +10,10 @@ check out the full tutorial on youtube: https://youtu.be/OQQhvW31arc
 learn how to create a camera shake effect
 check out the full tutorial on youtube: https://youtu.be/QC0Y8Rr0e0g
 
+## cpu particles
+learn how to make a rain and dust effect with cpu particles
+check out the full tutorial on youtube: https://youtu.be/ppumqnJNtNE
+
 ## credits
 all artwork used in this tutorial is from [gothicvania patreon collection](https://ansimuz.itch.io/gothicvania-patroon-collection) by ansimuz
 
