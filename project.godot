@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Parallax Background Tutorial"
+config/name="godot tutorials"
 run/main_scene="res://levels/test_level.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
