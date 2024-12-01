@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cxt1i3lg163fv"]
+[gd_scene load_steps=11 format=4 uid="uid://cxt1i3lg163fv"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_1cr7u"]
 [ext_resource type="PackedScene" uid="uid://bekcr72y8jcov" path="res://scenes/tilemaps/environment_tilemap.tscn" id="1_bqn2v"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://do03vg5ef0w5e" path="res://scenes/player/player_camera.tscn" id="3_q44ju"]
 [ext_resource type="Texture2D" uid="uid://d3kngqd2ups6a" path="res://assets/background/foreground.png" id="4_jr3op"]
 [ext_resource type="PackedScene" uid="uid://c58addhj3pagn" path="res://scenes/world/world_boundary.tscn" id="4_l0utk"]
+[ext_resource type="Script" path="res://levels/button.gd" id="9_in7yj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ciism"]
 size = Vector2(240.775, 3.63616)
@@ -65,3 +66,13 @@ position = Vector2(1.06072, 111.802)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ciism")
 debug_color = Color(0.972549, 0, 0.435294, 1)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 184.555
+offset_top = 94.7525
+offset_right = 243.555
+offset_bottom = 125.753
+text = "SHAKE"
+script = ExtResource("9_in7yj")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
