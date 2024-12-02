@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b16bem3hxgf3y"]
 
-[ext_resource type="Script" path="res://rain_manager.gd" id="1_4ipsm"]
+[ext_resource type="Script" path="res://fx/rain_manager.gd" id="1_aolqt"]
 
 [node name="RainManager" type="Node2D"]
-script = ExtResource("1_4ipsm")
+script = ExtResource("1_aolqt")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
