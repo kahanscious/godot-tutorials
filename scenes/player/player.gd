@@ -12,6 +12,13 @@ class_name Player extends CharacterBody2D
 
 var direction: float
 
+@export var max_health: int = 100
+var current_health: int = 100
+
+
+func _ready() -> void:
+	current_health = max_health
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -48,3 +55,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = lerp(velocity.x, 0.0, air_acceleration * 0.5)
 
 	move_and_slide()
+
+
+func take_damage(amount: int) -> void:
+	current_health -= amount

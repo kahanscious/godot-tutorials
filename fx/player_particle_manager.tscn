@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1ewq5r3sgxr0"]
 
-[ext_resource type="Script" path="res://player_particle_manager.gd" id="1_svjr6"]
+[ext_resource type="Script" path="res://fx/player_particle_manager.gd" id="1_clwu3"]
 
 [node name="PlayerParticleManager" type="Node2D"]
-script = ExtResource("1_svjr6")
+script = ExtResource("1_clwu3")
 
 [node name="RunParticles" type="CPUParticles2D" parent="."]
