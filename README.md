@@ -1,6 +1,6 @@
 # godot tutorialas
 
-this is the project repo for my youtube tutorial on creating parallax backgrounds in godot 4.3.
+this is the project repo for my godot and gdscript tutorial series: https://www.youtube.com/playlist?list=PLS_-svNHQV8gqfeqBHcoAr0RV1xdM5mso.
 
 ## parallax background
 learn how to create smooth parallax scrolling backgrounds in godot 4.3 using the new parallax 2d node
@@ -15,15 +15,19 @@ learn how to make a rain and dust effect with cpu particles
 check out the full tutorial on youtube: https://youtu.be/ppumqnJNtNE
 
 ## health bars
-learn how to make a rain and dust effect with cpu particles
+learn how to make health bars two ways
 check out the full tutorial on youtube: https://youtu.be/GY-oiOzlQA8
 
 ## coyote jump
-learn how to make a rain and dust effect with cpu particles
+learn how to implement coyote jump
 check out the full tutorial on youtube: https://youtu.be/sojFWKrv5OM
 
+## auto-tile & animated tiles
+learn how to auto-tile and make animated tiles
+check out the full tutorial on youtube: https://youtu.be/yCQNORRXOoY
+
 ## moving platforms
-learn how to make a rain and dust effect with cpu particles
+learn how to make moving platforms two ways
 check out the full tutorial on youtube: https://youtu.be/iKtkwaY6qY4
 
 ## credits
