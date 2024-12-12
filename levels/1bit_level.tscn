@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=4 uid="uid://fx10ofgi1p6v"]
+
+[ext_resource type="PackedScene" uid="uid://6iupmgegsned" path="res://scenes/moving_platform_code.tscn" id="1_fwncj"]
+[ext_resource type="PackedScene" uid="uid://cooxtyxtd7mcy" path="res://scenes/tilemaps/1bit_tilemap.tscn" id="1_hx58p"]
+[ext_resource type="PackedScene" uid="uid://cns22aaw5e3p0" path="res://scenes/player/1bit_player.tscn" id="2_0k8kb"]
+[ext_resource type="PackedScene" uid="uid://do03vg5ef0w5e" path="res://scenes/player/player_camera.tscn" id="3_b0pkf"]
+[ext_resource type="PackedScene" uid="uid://dmvhcob8oj2md" path="res://scenes/moving_platform_no_code.tscn" id="4_u8utw"]
+
+[node name="1BitLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_0k8kb")]
+position = Vector2(73, 155)
+
+[node name="Camera2D" parent="Player" instance=ExtResource("3_b0pkf")]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_hx58p")]
+tile_map_data = PackedByteArray("AAADAAwAAAAIAAQAAAAEAAwAAAAIAAQAAAAFAAwAAAAIAAQAAAAGAAwAAAAIAAQAAAAHAAwAAAAIAAQAAAAIAAwAAAAIAAQAAAAJAAwAAAAIAAQAAAAKAAwAAAAIAAQAAAAPAAwAAAAIAAQAAAAQAAwAAAAIAAQAAAARAAwAAAAIAAQAAAASAAwAAAAIAAQAAAATAAwAAAAIAAQAAAAUAAwAAAAIAAQAAAAVAAwAAAAIAAQAAAAWAAwAAAAIAAQAAAAXAAwAAAAIAAQAAAAYAAwAAAAJAAQAAAACAAwAAAAHAAQAAAA=")
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="MovingPlatformNoCode" parent="Platforms" instance=ExtResource("4_u8utw")]
+position = Vector2(155.617, 139.255)
+
+[node name="MovingPlatformsCode" type="Node2D" parent="Platforms"]
+
+[node name="MovingPlatformCode1" parent="Platforms/MovingPlatformsCode" instance=ExtResource("1_fwncj")]
+position = Vector2(203.727, 173.42)
+left_marker = NodePath("../../Platform1Markers/LeftPoint")
+right_marker = NodePath("../../Platform1Markers/RightPoint")
+
+[node name="Platform1Markers" type="Node2D" parent="Platforms"]
+
+[node name="LeftPoint" type="Marker2D" parent="Platforms/Platform1Markers"]
+position = Vector2(140.869, 174.543)
+
+[node name="RightPoint" type="Marker2D" parent="Platforms/Platform1Markers"]
+position = Vector2(257.605, 172.298)

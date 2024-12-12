@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bekcr72y8jcov"]
+[gd_scene load_steps=4 format=3 uid="uid://bekcr72y8jcov"]
 
 [ext_resource type="Texture2D" uid="uid://cek34oyfw1nyl" path="res://assets/environment/tileset.png" id="1_xiqy2"]
 
@@ -315,10 +315,5 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_ewxai")
 
-[sub_resource type="GDScript" id="GDScript_2r0dp"]
-script/source = "class_name LevelTileMap extends TileMapLayer
-"
-
 [node name="EnvironmentTileMap" type="TileMapLayer"]
 tile_set = SubResource("TileSet_aw5i3")
-script = SubResource("GDScript_2r0dp")
