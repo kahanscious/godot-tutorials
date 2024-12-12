@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://cns22aaw5e3p0"]
+
+[ext_resource type="Script" path="res://scenes/player/1_bit_player.gd" id="1_2n85y"]
+[ext_resource type="Texture2D" uid="uid://cf76vuc4rfveu" path="res://assets/1bit/monochrome_tilemap_transparent_packed.png" id="2_tjdqn"]
+[ext_resource type="PackedScene" uid="uid://c1ewq5r3sgxr0" path="res://fx/player_particle_manager.tscn" id="3_b7wku"]
+
+[sub_resource type="Animation" id="Animation_5a6gs"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6l5xl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_svo61"]
+resource_name = "run"
+length = 0.7
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6tugy"]
+_data = {
+"RESET": SubResource("Animation_6l5xl"),
+"idle": SubResource("Animation_5a6gs"),
+"run": SubResource("Animation_svo61")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dqp0"]
+atlas = ExtResource("2_tjdqn")
+region = Rect2(0, 192, 112, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pteyj"]
+size = Vector2(11.963, 11.0207)
+
+[node name="1BitPlayer" type="CharacterBody2D"]
+collision_layer = 256
+script = ExtResource("1_2n85y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_6tugy")
+}
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.66629, -7.96384)
+texture = SubResource("AtlasTexture_3dqp0")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.667638, -5.47334)
+shape = SubResource("RectangleShape2D_pteyj")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="PlayerParticleManager" parent="." instance=ExtResource("3_b7wku")]
+visible = false
