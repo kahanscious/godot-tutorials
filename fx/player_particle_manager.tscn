@@ -6,3 +6,13 @@
 script = ExtResource("1_clwu3")
 
 [node name="RunParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.3
+spread = 15.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+scale_amount_max = 2.0
+
+[node name="GhostContainer" type="Node2D" parent="."]

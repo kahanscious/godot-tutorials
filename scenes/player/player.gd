@@ -4,13 +4,25 @@ class_name Player extends CharacterBody2D
 @onready var animations: AnimationPlayer = $AnimationPlayer
 @onready var player_particle_manager: PlayerParticleManager = $PlayerParticleManager
 
+@export_category("Ground Movement")
 @export var speed: float = 200.0
+
+@export_category("Air Movement")
+@export var gravity: Vector2 = Vector2(0, 980.0)
 @export var air_speed: float = 150.0
 @export var air_acceleration: float = 0.1
+
+@export_category("Jumping")
 @export var jump_force: float = -400.0
-@export var gravity: Vector2 = Vector2(0, 980.0)
 @export var coyote_time: float = 0.2
 @export var jump_buffer_time: float = 0.1
+
+@export_category("Dash Ability")
+@export var dash_speed: float = 400.0
+@export var dash_duration: float = 0.1
+@export var dash_cooldown: float = 1.0
+
+@export_category("Health")
 @export var max_health: int = 100
 
 var was_on_floor: bool = false
@@ -20,6 +32,12 @@ var jump_buffer_timer: Timer
 var direction: float
 var current_health: int = 100
 
+var can_dash: bool = true
+var is_dashing: bool = false
+var dash_direction: Vector2 = Vector2.ZERO
+var dash_timer: Timer
+var cooldown_timer: Timer
+
 
 func _ready() -> void:
 	current_health = max_health
@@ -28,14 +46,34 @@ func _ready() -> void:
 	jump_buffer_timer.timeout.connect(func(): jump_pressed = false)
 	add_child(jump_buffer_timer)
 
+	dash_timer = Timer.new()
+	dash_timer.one_shot = true
+	dash_timer.wait_time = dash_duration
+	dash_timer.timeout.connect(end_dash)
+	add_child(dash_timer)
+
+	cooldown_timer = Timer.new()
+	cooldown_timer.one_shot = true
+	cooldown_timer.wait_time = dash_cooldown
+	cooldown_timer.timeout.connect(refresh_dash)
+	add_child(cooldown_timer)
+
 
 func _physics_process(delta: float) -> void:
-	was_on_floor = is_on_floor()
-	get_platform_velocity()
+	# Handle dash
+	if Input.is_action_just_pressed("dash") and can_dash and not is_dashing:
+		direction = Input.get_axis("left", "right")
+		if not is_on_floor() or direction != 0:
+			start_dash()
+
+	if is_dashing:
+		velocity.x = dash_direction.x * dash_speed
+		velocity.y += gravity.y * delta * 0.5
+		move_and_slide()
+		return
 
 	if not is_on_floor():
 		velocity += gravity * delta
-
 		if was_on_floor and velocity.y >= 0:
 			can_coyote_jump = true
 			get_tree().create_timer(coyote_time).timeout.connect(func(): can_coyote_jump = false)
@@ -83,6 +121,35 @@ func _physics_process(delta: float) -> void:
 			velocity.x = lerp(velocity.x, 0.0, air_acceleration * 0.5)
 
 	move_and_slide()
+
+
+func start_dash() -> void:
+	is_dashing = true
+	can_dash = false
+
+	direction = Input.get_axis("left", "right")
+	if direction != 0:
+		dash_direction = Vector2(direction, 0)
+	else:
+		dash_direction = Vector2(-1 if sprite.flip_h else 1, 0)
+
+	dash_timer.start()
+	cooldown_timer.start()
+
+	if player_particle_manager:
+		player_particle_manager.start_dash_effect(dash_direction)
+
+
+func end_dash() -> void:
+	is_dashing = false
+	velocity = Vector2.ZERO
+
+	if player_particle_manager:
+		player_particle_manager.stop_dash_effect()
+
+
+func refresh_dash() -> void:
+	can_dash = true
 
 
 func take_damage(amount: int) -> void:

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhinm7e2voo82"]
+
+[ext_resource type="Script" path="res://scenes/player/ghost_sprite.gd" id="1_biuct"]
+
+[node name="GhostSprite" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.15)
+scale = Vector2(1.2, 0.9)
+script = ExtResource("1_biuct")
