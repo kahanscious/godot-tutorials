@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://6iupmgegsned"]
 
-[ext_resource type="Script" path="res://scenes/moving_platform_code.gd" id="1_4wd4j"]
 [ext_resource type="Texture2D" uid="uid://cf76vuc4rfveu" path="res://assets/1bit/monochrome_tilemap_transparent_packed.png" id="1_f4n40"]
+[ext_resource type="Script" path="res://scenes/world/platforms/moving_platform_code.gd" id="1_lw0ni"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lddi"]
 atlas = ExtResource("1_f4n40")
@@ -12,7 +12,7 @@ size = Vector2(48, 8)
 
 [node name="MovingPlatformCode" type="AnimatableBody2D"]
 collision_mask = 256
-script = ExtResource("1_4wd4j")
+script = ExtResource("1_lw0ni")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_2lddi")

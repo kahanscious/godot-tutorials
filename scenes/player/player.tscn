@@ -180,4 +180,3 @@ shape = SubResource("CapsuleShape2D_h131y")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="PlayerParticleManager" parent="." instance=ExtResource("3_4110v")]
-visible = false
