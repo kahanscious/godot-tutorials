@@ -4,9 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cf76vuc4rfveu" path="res://assets/1bit/monochrome_tilemap_transparent_packed.png" id="2_tjdqn"]
 [ext_resource type="PackedScene" uid="uid://c1ewq5r3sgxr0" path="res://fx/player_particle_manager.tscn" id="3_b7wku"]
 
-[sub_resource type="Animation" id="Animation_5a6gs"]
-resource_name = "idle"
-length = 0.1
+[sub_resource type="Animation" id="Animation_6l5xl"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -20,8 +19,9 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_6l5xl"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_5a6gs"]
+resource_name = "idle"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

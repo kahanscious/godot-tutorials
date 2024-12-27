@@ -1,3 +1,4 @@
+@icon("res://assets/icons/control/icon_character_green.png")
 class_name OneBitPlayer extends CharacterBody2D
 
 @onready var sprite: Sprite2D = $Sprite2D
