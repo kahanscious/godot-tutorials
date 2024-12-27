@@ -34,8 +34,17 @@ check out the full tutorial on youtube: https://youtu.be/iKtkwaY6qY4
 learn how to make a player dash effect<br>
 check out the full tutorial on youtube: https://youtu.be/iYmz27cA72g
 
+## unit testing
+learn how to unit test with gut (godot unit testing)<br>
+check out the full tutorial on youtube: https://youtu.be/h5HmdD0cAps
+
+## custom icons
+learn how to use custom icons<br>
+check out the full tutorial on youtube: https://youtu.be/hA8bqRn0uXs
+
 ## credits
 all artwork used in this tutorial is from the below collections
 - [gothicvania patreon collection](https://ansimuz.itch.io/gothicvania-patroon-collection) by ansimuz
 - [pixel progress bar pack]( https://woodlandcat.itch.io/pixel-progress-bar-asset-pack) by woodlandcat
 - [1 bit platformer pack](https://kenney.nl/assets/1-bit-platformer-pack) by kenney
+- [custom icons](https://pixel-boy.itch.io/icon-godot-node) from pixel-boy
