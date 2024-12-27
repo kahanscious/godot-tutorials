@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://levels/camera.gd" id="1_u8h8h"]
 
-[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("tile_map")]
+[node name="Camera2D" type="Camera2D"]
 process_callback = 0
 script = ExtResource("1_u8h8h")
-tile_map = NodePath("")

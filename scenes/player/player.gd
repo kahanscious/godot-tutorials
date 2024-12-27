@@ -1,3 +1,4 @@
+@icon("res://assets/icons/node_2D/icon_character.png")
 class_name Player extends CharacterBody2D
 
 @onready var sprite: Sprite2D = $Sprite2D
