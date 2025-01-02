@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dv0xhun7qilnd"]
+[gd_scene load_steps=21 format=4 uid="uid://dv0xhun7qilnd"]
 
 [ext_resource type="Script" path="res://levels/outdoor_level.gd" id="1_0yu1e"]
 [ext_resource type="Texture2D" uid="uid://bgbhsgft62wa8" path="res://assets/environment/autotile/TilesetFloor.png" id="1_iwtih"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmlkyaoepmvbw" path="res://assets/environment/autotile/Log.png" id="5_yqumw"]
 [ext_resource type="Texture2D" uid="uid://c0sdrmrcxjagl" path="res://assets/environment/autotile/Plant01.png" id="6_grax8"]
 [ext_resource type="PackedScene" uid="uid://cu0dwf247a1w2" path="res://scenes/player/top_down_player.tscn" id="9_0i218"]
+[ext_resource type="PackedScene" uid="uid://bhsnmijldrty3" path="res://scenes/world/torch.tscn" id="10_qib1k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_les5n"]
 texture = ExtResource("2_gwr36")
@@ -563,3 +564,6 @@ offset_bottom = 42.0274
 
 [node name="TopDownPlayer" parent="." instance=ExtResource("9_0i218")]
 position = Vector2(341.214, 178.625)
+
+[node name="Torch" parent="." instance=ExtResource("10_qib1k")]
+position = Vector2(416, 264)

@@ -3,7 +3,7 @@ class_name OutdoorLevel extends Node2D
 @onready var day_night_manager: DayNightManager = $DayNightManager
 @onready var time_label: Label = $TimeLabel
 
-@export var enable_day_night_cycle: bool = false
+@export var enable_day_night_cycle: bool = true
 
 
 func _ready() -> void:
