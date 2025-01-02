@@ -6,8 +6,8 @@ extends Node2D
 
 @export var base_energy: float = 1.2
 @export var flicker_range: float = 0.05
-@export var light_color: Color = Color(1, 0.6, 0.2, 1)  # Warm orange default
-@export var light_radius: float = 2.0  # Multiplier for light scale
+@export var light_color: Color = Color(1, 0.6, 0.2, 1)
+@export var light_radius: float = 2.0
 
 
 func _ready() -> void:
