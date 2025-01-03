@@ -46,6 +46,15 @@ check out the full tutorial on youtube: https://youtu.be/hA8bqRn0uXs
 learn how to create a day & night cycle<br>
 check out the full tutorial on youtube: https://youtu.be/gwbShJxpGhY
 
+## animation tree
+learn how to use an animation tree<br>
+check out the full tutorial on youtube: https://youtu.be/oyvTZWUjCy0
+
+## dynamic torch lighting
+learn how to create dynamic lighting<br>
+check out the full tutorial on youtube: https://youtu.be/XgbEbtqBuFw
+
+
 
 ## credits
 all artwork used in this tutorial is from the below collections
@@ -53,4 +62,5 @@ all artwork used in this tutorial is from the below collections
 - [pixel progress bar pack]( https://woodlandcat.itch.io/pixel-progress-bar-asset-pack) by woodlandcat
 - [1 bit platformer pack](https://kenney.nl/assets/1-bit-platformer-pack) by kenney
 - [custom icons](https://pixel-boy.itch.io/icon-godot-node) by pixel-boy
-- [magic market](https://gfragger.itch.io/magic-market) by gfragger 
+- [magic market](https://gfragger.itch.io/magic-market) by gfragger
+- [platform metroidvania pixel art asset pack](https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack) by o-lobster
