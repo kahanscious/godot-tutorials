@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhsnmijldrty3"]
+
+[ext_resource type="Script" path="res://scenes/world/torch.gd" id="1_sxe2b"]
+[ext_resource type="Texture2D" uid="uid://ddotkccl55axf" path="res://assets/environment/props/torch.png" id="2_lykrq"]
+
+[sub_resource type="Animation" id="Animation_fxoq3"]
+resource_name = "burn"
+length = 1.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_sfp2k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rom13"]
+_data = {
+"RESET": SubResource("Animation_sfp2k"),
+"burn": SubResource("Animation_fxoq3")
+}
+
+[sub_resource type="Gradient" id="Gradient_gsi6y"]
+offsets = PackedFloat32Array(0, 0.987395)
+colors = PackedColorArray(1, 0.6, 0.2, 1, 1, 0.6, 0.2, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_myldf"]
+gradient = SubResource("Gradient_gsi6y")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.1)
+
+[node name="Torch" type="Node2D"]
+script = ExtResource("1_sxe2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("2_lykrq")
+hframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rom13")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -15)
+color = Color(1, 0.6, 0.2, 1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_myldf")
+
+[node name="FlickerTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
