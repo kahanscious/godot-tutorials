@@ -1,4 +1,4 @@
-# godot tutorialas
+# godot tutorials
 
 this is the project repo for my godot and gdscript tutorial series: https://www.youtube.com/playlist?list=PLS_-svNHQV8gqfeqBHcoAr0RV1xdM5mso.
 
