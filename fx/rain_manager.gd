@@ -17,7 +17,7 @@ func _ready() -> void:
 		position = Vector2(0, -200)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if rain_particles:
 		var camera: Camera2D = get_node_or_null("/root/TestLevel/Player/Camera2D")
 		if camera:

@@ -4,6 +4,8 @@ class_name Player extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animations: AnimationPlayer = $AnimationPlayer
 @onready var player_particle_manager: PlayerParticleManager = $PlayerParticleManager
+@onready var progress_bar: ProgressBar = $"../ProgressBar"
+@onready var texture_progress_bar: TextureProgressBar = $"../TextureProgressBar"
 
 @export_category("Ground Movement")
 @export var speed: float = 200.0
@@ -26,12 +28,20 @@ class_name Player extends CharacterBody2D
 @export_category("Health")
 @export var max_health: int = 100
 
+var health: int = 100:
+	set(value):
+		health = clamp(value, 0, max_health)
+		if is_node_ready():
+			progress_bar.value = health
+			texture_progress_bar.value = health
+	get:
+		return health
+
 var was_on_floor: bool = false
 var can_coyote_jump: bool = false
 var jump_pressed: bool = false
 var jump_buffer_timer: Timer
 var direction: float
-var current_health: int = 100
 
 var can_dash: bool = true
 var is_dashing: bool = false
@@ -41,7 +51,6 @@ var cooldown_timer: Timer
 
 
 func _ready() -> void:
-	current_health = max_health
 	jump_buffer_timer = Timer.new()
 	jump_buffer_timer.one_shot = true
 	jump_buffer_timer.timeout.connect(func(): jump_pressed = false)
@@ -151,7 +160,3 @@ func end_dash() -> void:
 
 func refresh_dash() -> void:
 	can_dash = true
-
-
-func take_damage(amount: int) -> void:
-	current_health -= amount
