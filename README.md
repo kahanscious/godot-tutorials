@@ -1,4 +1,4 @@
-# godot tutorialas
+# godot tutorials
 
 this is the project repo for my godot and gdscript tutorial series: https://www.youtube.com/playlist?list=PLS_-svNHQV8gqfeqBHcoAr0RV1xdM5mso.
 
@@ -54,6 +54,9 @@ check out the full tutorial on youtube: https://youtu.be/oyvTZWUjCy0
 learn how to create dynamic lighting<br>
 check out the full tutorial on youtube: https://youtu.be/XgbEbtqBuFw
 
+## dynamic torch lighting
+learn how to use getters & setters<br>
+check out the full tutorial on youtube: https://youtu.be/KRCQ7pDP5cM
 
 
 ## credits
