@@ -54,6 +54,9 @@ check out the full tutorial on youtube: https://youtu.be/oyvTZWUjCy0
 learn how to create dynamic lighting<br>
 check out the full tutorial on youtube: https://youtu.be/XgbEbtqBuFw
 
+## dynamic torch lighting
+learn how to use getters & setters<br>
+check out the full tutorial on youtube: https://youtu.be/KRCQ7pDP5cM
 
 
 ## credits
