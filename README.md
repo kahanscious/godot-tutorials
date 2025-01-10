@@ -54,9 +54,13 @@ check out the full tutorial on youtube: https://youtu.be/oyvTZWUjCy0
 learn how to create dynamic lighting<br>
 check out the full tutorial on youtube: https://youtu.be/XgbEbtqBuFw
 
-## dynamic torch lighting
+## getters & setters
 learn how to use getters & setters<br>
 check out the full tutorial on youtube: https://youtu.be/KRCQ7pDP5cM
+
+## npc path following
+learn how to use make npcs follow paths<br>
+check out the full tutorial on youtube: https://youtu.be/iGvZFzqmiWs
 
 
 ## credits
