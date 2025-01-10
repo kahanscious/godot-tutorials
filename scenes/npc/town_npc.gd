@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var path: Path2D = $Path2D
 @onready var path_follow: PathFollow2D = $Path2D/PathFollow2D
 
-@export var move_speed: float = 50.0
+@export var move_speed: float = 60.0
 @export var loop_path: bool = true
 
 var last_position: Vector2

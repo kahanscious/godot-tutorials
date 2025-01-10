@@ -1168,19 +1168,12 @@ offset_right = 433.034
 offset_bottom = 42.0274
 
 [node name="TopDownPlayer" parent="." instance=ExtResource("9_0i218")]
-position = Vector2(341.214, 178.625)
+position = Vector2(416, 232)
 
 [node name="Torch" parent="." instance=ExtResource("10_qib1k")]
 position = Vector2(416, 264)
 
 [node name="TownNPC" parent="." instance=ExtResource("11_ok2cp")]
-position = Vector2(104, 208)
-
-[node name="Sprite2D" parent="TownNPC" index="0"]
-frame = 2
-
-[node name="Path2D" parent="TownNPC" index="4"]
-position = Vector2(1.33333, 0)
-scale = Vector2(0.833333, 1)
+position = Vector2(104, 216)
 
 [editable path="TownNPC"]
