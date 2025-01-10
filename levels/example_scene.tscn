@@ -1176,7 +1176,10 @@ position = Vector2(416, 264)
 [node name="TownNPC" parent="." instance=ExtResource("11_ok2cp")]
 position = Vector2(104, 208)
 
-[node name="Path2D" parent="TownNPC" index="5"]
+[node name="Sprite2D" parent="TownNPC" index="0"]
+frame = 2
+
+[node name="Path2D" parent="TownNPC" index="4"]
 position = Vector2(1.33333, 0)
 scale = Vector2(0.833333, 1)
 
