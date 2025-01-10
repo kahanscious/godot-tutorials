@@ -1,7 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://cu0dwf247a1w2"]
+[gd_scene load_steps=29 format=3 uid="uid://c3m5l4c8oh7c"]
 
-[ext_resource type="Script" path="res://scenes/player/top_down_player.gd" id="1_ku63u"]
-[ext_resource type="Texture2D" uid="uid://b6fmjil8gau83" path="res://assets/characters/topdown-player-spritesheet.png" id="2_txhqp"]
+[ext_resource type="Script" path="res://scenes/npc/town_npc.gd" id="1_bvetm"]
+[ext_resource type="Texture2D" uid="uid://dg6wk5r0bo0bf" path="res://assets/characters/npc-spritesheet.png" id="2_4oqjh"]
 
 [sub_resource type="Animation" id="Animation_8efc8"]
 length = 0.001
@@ -219,7 +219,7 @@ advance_condition = &"not_moving"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3st8d"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sovcx"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mlo20"]
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_d4bul")
 states/idle/position = Vector2(423, 166)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_qcwxd")
@@ -227,12 +227,21 @@ states/walk/position = Vector2(423, 67)
 transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_caxec"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ct4it"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_3st8d")]
 graph_offset = Vector2(68, -44)
 
-[node name="TopDownPlayer" type="CharacterBody2D"]
-script = ExtResource("1_ku63u")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pv4j"]
+size = Vector2(16, 18)
+
+[sub_resource type="Curve2D" id="Curve2D_j3vpw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 123.2, 200, 0, 0, 0, 0, 123.2, 128, 0, 0, 0, 0, 228.8, 128, 0, 0, 0, 0, 228.8, 256, 0, 0, 0, 0, 123.2, 256, 0, 0, 0, 0, 123.2, 200)
+}
+point_count = 6
+
+[node name="TownNPC" type="CharacterBody2D"]
+script = ExtResource("1_bvetm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -6)
-texture = ExtResource("2_txhqp")
+texture = ExtResource("2_4oqjh")
 hframes = 4
 vframes = 3
 
@@ -242,9 +251,29 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_sovcx")
+tree_root = SubResource("AnimationNodeStateMachine_mlo20")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_moving = false
 parameters/conditions/not_moving = false
 parameters/idle/blend_position = Vector2(0.0605714, -0.296417)
 parameters/walk/blend_position = Vector2(0.122286, -0.0749185)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_2pv4j")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+top_level = true
+curve = SubResource("Curve2D_j3vpw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(123.2, 200)
+rotation = -1.5708
+rotates = false
+
+[node name="DebugLine" type="Line2D" parent="."]
+top_level = true
+
+[node name="WaitTimer" type="Timer" parent="."]
