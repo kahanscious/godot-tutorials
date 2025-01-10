@@ -181,4 +181,3 @@ curve = SubResource("Curve2D_j3vpw")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(107.671, 200)
 rotation = -1.5708
-rotates = false
