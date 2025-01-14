@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dv0xhun7qilnd"]
+[gd_scene load_steps=33 format=4 uid="uid://dv0xhun7qilnd"]
 
 [ext_resource type="Script" path="res://levels/outdoor_level.gd" id="1_0yu1e"]
 [ext_resource type="Texture2D" uid="uid://bgbhsgft62wa8" path="res://assets/environment/autotile/TilesetFloor.png" id="1_iwtih"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://x4umk47q8nvw" path="res://assets/environment/TilesetProps.png" id="11_as6mm"]
 [ext_resource type="PackedScene" uid="uid://c3m5l4c8oh7c" path="res://scenes/npc/town_npc.tscn" id="11_ok2cp"]
 [ext_resource type="FontFile" uid="uid://bhjgpy1dovmyq" path="res://addons/gut/fonts/CourierPrime-Bold.ttf" id="13_ce1jq"]
+[ext_resource type="Texture2D" uid="uid://b766jr3t4m147" path="res://assets/ui/ui-spritesheet.png" id="17_vchsd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_les5n"]
 texture = ExtResource("2_gwr36")
@@ -1328,6 +1329,10 @@ sources/0 = SubResource("TileSetAtlasSource_nd2ab")
 sources/1 = SubResource("TileSetAtlasSource_njlf6")
 sources/2 = SubResource("TileSetAtlasSource_5bcog")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsyvx"]
+atlas = ExtResource("17_vchsd")
+region = Rect2(48, 576, 24, 16)
+
 [node name="ExampleScene" type="Node2D"]
 script = ExtResource("1_0yu1e")
 
@@ -1377,5 +1382,8 @@ position = Vector2(416, 264)
 position = Vector2(104, 216)
 
 [node name="Minimap" parent="." instance=ExtResource("2_f8hfa")]
+
+[node name="CursorSprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_lsyvx")
 
 [editable path="TownNPC"]
