@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cu0dwf247a1w2"]
+[gd_scene load_steps=28 format=3 uid="uid://cu0dwf247a1w2"]
 
 [ext_resource type="Script" path="res://scenes/player/top_down_player.gd" id="1_ku63u"]
 [ext_resource type="Texture2D" uid="uid://b6fmjil8gau83" path="res://assets/characters/topdown-player-spritesheet.png" id="2_txhqp"]
@@ -227,7 +227,11 @@ states/walk/position = Vector2(423, 67)
 transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_caxec"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ct4it"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_3st8d")]
 graph_offset = Vector2(68, -44)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csaix"]
+size = Vector2(12, 13.694)
+
 [node name="TopDownPlayer" type="CharacterBody2D"]
+collision_layer = 256
 script = ExtResource("1_ku63u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -248,3 +252,7 @@ parameters/conditions/is_moving = false
 parameters/conditions/not_moving = false
 parameters/idle/blend_position = Vector2(0.0605714, -0.296417)
 parameters/walk/blend_position = Vector2(0.122286, -0.0749185)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.84698)
+shape = SubResource("RectangleShape2D_csaix")
