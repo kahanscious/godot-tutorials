@@ -4,11 +4,14 @@ class_name OutdoorLevel extends Node2D
 @onready var time_label: Label = $CanvasLayer/TimeLabel
 @onready var top_down_player: TopDownPlayer = $TopDownPlayer
 @onready var minimap: CanvasLayer = $Minimap
+@onready var cursor_sprite: Sprite2D = $CursorSprite
 
 @export var enable_day_night_cycle: bool = true
 
 
 func _ready() -> void:
+	Input.set_custom_mouse_cursor(cursor_sprite.texture)
+
 	if enable_day_night_cycle:
 		_setup_day_night_cycle()
 	else:
