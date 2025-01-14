@@ -1,7 +1,9 @@
 class_name OutdoorLevel extends Node2D
 
 @onready var day_night_manager: DayNightManager = $DayNightManager
-@onready var time_label: Label = $TimeLabel
+@onready var time_label: Label = $CanvasLayer/TimeLabel
+@onready var top_down_player: TopDownPlayer = $TopDownPlayer
+@onready var minimap: CanvasLayer = $Minimap
 
 @export var enable_day_night_cycle: bool = true
 
@@ -12,6 +14,9 @@ func _ready() -> void:
 	else:
 		day_night_manager.visible = false
 		day_night_manager.process_mode = Node.PROCESS_MODE_DISABLED
+
+	if minimap and top_down_player:
+		minimap.player_node = top_down_player
 
 
 func _setup_day_night_cycle() -> void:
