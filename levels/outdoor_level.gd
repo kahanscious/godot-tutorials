@@ -10,8 +10,6 @@ class_name OutdoorLevel extends Node2D
 
 
 func _ready() -> void:
-	Input.set_custom_mouse_cursor(cursor_sprite.texture)
-
 	if enable_day_night_cycle:
 		_setup_day_night_cycle()
 	else:
