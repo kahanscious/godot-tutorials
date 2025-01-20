@@ -160,3 +160,16 @@ func end_dash() -> void:
 
 func refresh_dash() -> void:
 	can_dash = true
+
+
+func take_damage(amount: int) -> void:
+	health -= amount
+
+	if sprite.material:
+		var tween = create_tween()
+		tween.tween_method(set_flash_modifier, 1.0, 0.0, 0.2)
+
+
+func set_flash_modifier(value: float) -> void:
+	if sprite.material:
+		sprite.material.set_shader_parameter("flash_modifier", value)

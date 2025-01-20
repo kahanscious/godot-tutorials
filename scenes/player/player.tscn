@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bmro7y21hrdqx"]
+[gd_scene load_steps=16 format=3 uid="uid://bmro7y21hrdqx"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_yffeu"]
 [ext_resource type="Texture2D" uid="uid://k1k6kd4nme10" path="res://assets/characters/main/male-spritesheet.png" id="2_2mk6k"]
+[ext_resource type="Shader" path="res://scenes/player/hitflash.gdshader" id="2_t7vrx"]
 [ext_resource type="PackedScene" uid="uid://c1ewq5r3sgxr0" path="res://fx/player_particle_manager.tscn" id="3_4110v"]
 
 [sub_resource type="Animation" id="Animation_r3kw1"]
@@ -153,6 +154,11 @@ _data = {
 "shoot": SubResource("Animation_770og")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gyfv7"]
+shader = ExtResource("2_t7vrx")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h131y"]
 radius = 7.0
 
@@ -168,6 +174,7 @@ libraries = {
 autoplay = "idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gyfv7")
 position = Vector2(1, -40)
 texture = ExtResource("2_2mk6k")
 hframes = 8

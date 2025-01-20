@@ -41,6 +41,6 @@ func _on_rain_button_pressed() -> void:
 func _on_damage_button_pressed() -> void:
 	print("Before damage: ", player.health)
 
-	player.health -= 20
+	player.take_damage(20)
 
 	print("After damage: ", player.health)
