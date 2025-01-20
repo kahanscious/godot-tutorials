@@ -130,3 +130,5 @@ texture_progress = ExtResource("12_p1waq")
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="RainButton" to="." method="_on_rain_button_pressed"]
 [connection signal="pressed" from="DamageButton" to="." method="_on_damage_button_pressed"]
+
+[editable path="Player"]
