@@ -15,6 +15,10 @@ run/main_scene="res://levels/example_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LoadingScreen="*res://scenes/loading_screen/loading_screen.tscn"
+
 [display]
 
 window/size/viewport_width=480
