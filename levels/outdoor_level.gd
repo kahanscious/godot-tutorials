@@ -4,7 +4,6 @@ class_name OutdoorLevel extends Node2D
 @onready var time_label: Label = $CanvasLayer/TimeLabel
 @onready var top_down_player: TopDownPlayer = $TopDownPlayer
 @onready var minimap: CanvasLayer = $Minimap
-@onready var cursor_sprite: Sprite2D = $CursorSprite
 
 @export var enable_day_night_cycle: bool = true
 
@@ -27,3 +26,7 @@ func _setup_day_night_cycle() -> void:
 func _on_time_changed(_hour: float, time_string: String) -> void:
 	if time_label:
 		time_label.text = time_string
+
+
+func _on_reload_button_pressed() -> void:
+	LoadingScreen.start_loading(scene_file_path)

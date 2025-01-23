@@ -1381,4 +1381,13 @@ position = Vector2(104, 216)
 
 [node name="Minimap" parent="." instance=ExtResource("2_f8hfa")]
 
+[node name="ReloadButton" type="Button" parent="."]
+offset_left = 240.0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 200.0
+text = "RELOAD SCENE"
+
+[connection signal="pressed" from="ReloadButton" to="." method="_on_reload_button_pressed"]
+
 [editable path="TownNPC"]
