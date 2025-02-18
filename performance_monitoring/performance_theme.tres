@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c4ds2fyormgwp"]
+
+[ext_resource type="FontFile" uid="uid://xbaq5abblsa5" path="res://assets/monogram.ttf" id="1_s75d2"]
+
+[resource]
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_s75d2")

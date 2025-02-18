@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cxt1i3lg163fv"]
+[gd_scene load_steps=17 format=4 uid="uid://cxt1i3lg163fv"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_1cr7u"]
 [ext_resource type="PackedScene" uid="uid://bekcr72y8jcov" path="res://scenes/tilemaps/environment_tilemap.tscn" id="1_bqn2v"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://drpq2y8uxla1n" path="res://assets/ui/progress bar most rounded progress red.png" id="10_fq61m"]
 [ext_resource type="Texture2D" uid="uid://dqggwr01j0lrk" path="res://assets/ui/progress bar most rounded over.png" id="11_p7xb6"]
 [ext_resource type="Texture2D" uid="uid://l6eto2jgy0bo" path="res://assets/ui/progress bar most rounded progress orange.png" id="12_p1waq"]
+[ext_resource type="PackedScene" uid="uid://br4g31kekl30m" path="res://performance_monitoring/performance_monitor.tscn" id="13_jliwf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ciism"]
 size = Vector2(240.775, 3.63616)
@@ -126,6 +127,8 @@ offset_bottom = 78.8913
 texture_under = ExtResource("10_fq61m")
 texture_over = ExtResource("11_p7xb6")
 texture_progress = ExtResource("12_p1waq")
+
+[node name="PerformanceMonitor" parent="." instance=ExtResource("13_jliwf")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="RainButton" to="." method="_on_rain_button_pressed"]
